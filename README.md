@@ -61,4 +61,4 @@ $ marp 01.md && open 01.html
 |22| Симеон Христов | [ItzNinjaCat](https://github.com/ItzNinjaCat) | | |
 |23| Станислав Иванов | [Stanislav04](https://github.com/Stanislav04) | | |
 |24| Явор Пачеджиев| [yavor2](https://github.com/yavor2) | | |
-|25| Ясен Ефремов | [YassenEfremov](https://github.com/YassenEfremov) | | |
+|25| Ясен Ефремов | [YassenEfremov](https://github.com/YassenEfremov) | 🍬🍬 | |
