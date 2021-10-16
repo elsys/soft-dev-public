@@ -51,6 +51,6 @@ def check_circles(c1_center, c1_radius, c2_center, c2_radius):
     if distance > c1_radius + c2_radius:
         return "NO COMMON"
     if distance < c1_radius + c2_radius:
-        return "INTERCECTING"
+        return "INTERSECTING"
     if distance <= abs(c1_radius - c2_radius):
         return "CONTAINING"
