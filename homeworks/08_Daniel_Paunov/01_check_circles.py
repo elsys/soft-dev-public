@@ -11,15 +11,15 @@ def checkCircles(c1_center, c1_radius, c2_center, c2_radius):
         c2_center = temp_center
         c2_radius = float(temp_radius)
     if c1_center == c2_center and float(c1_radius) == float(c2_radius):
-        return "Matching"
+        return "MATCHING"
     elif distance(c1_center, c2_center) + float(c2_radius) < float(c1_radius):
-        return "Containing"
+        return "CONTAINING"
     elif distance(c1_center, c2_center) == float(c1_radius) + float(c2_radius):
-        return "Touching"
+        return "TOUCHING"
     elif distance(c1_center, c2_center) < float(c1_radius) + float(c2_radius):
-        return "Intersecting"
+        return "INTERSECTING"
     else:
-        return "Non-matching"
+        return "NO_COMMON"
     return
 
 while True:
