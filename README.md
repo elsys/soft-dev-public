@@ -43,7 +43,7 @@ $ marp 01.md && open 01.html
 |4| Боряна Стефанова| [Boryana23](https://github.com/Boryana23) | | |
 |5| Валентин Найденов| [valentinmnaydenov](https://github.com/valentinmnaydenov) | | |
 |6| Данаил Божков | [DBozhkovV](https://github.com/DBozhkovV) | | |
-|7| Даниел Паунов | [McAwesome123](https://github.com/McAwesome123) | | |
+|7| Даниел Паунов | [McAwesome123](https://github.com/McAwesome123) | 🍬 | |
 |8| Елена Върбанова | [elenavarbanova](https://github.com/elenavarbanova) | | |
 |9| Златина Лилова | [zlatililova](https://github.com/zlatililova) | | |
 |10| Иваело Кръстев | [Ivaelo](https://github.com/Ivaelo) | | |
