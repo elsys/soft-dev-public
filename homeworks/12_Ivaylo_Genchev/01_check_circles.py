@@ -10,8 +10,28 @@ Params: center point cordinates(x, y), radius size
 Task: Determine their state - matching, touching, nested, intersecting, unrelated.
 """
 
+class NegativeRadiusError(Exception):
+    """Custom exception raised when circle radius is negative."""
+
+    def __init__(self) -> None:
+        super().__init__("Circle radius is negative.")
+
+class InvalidDataType(Exception):
+    """Custom exception raised when circle cordinates or radius aren't of type int or float"""
+
+    def __init__(self) -> None:
+        super().__init__("Invalid data type. Expected integer or float.")
+
+
 class Circle:
     def __init__(self, x: float, y: float, r: float) -> None:
+
+        if (type(x) != int and type(x) != float) or (type(y) != int and type(y) != float) or (type(r) != int and type(r) != float):
+            raise InvalidDataType()            
+
+        if r < 0: 
+            raise NegativeRadiusError() 
+        
         self.cords = (x, y)
         self.radius = r
 
@@ -136,7 +156,7 @@ class Circle:
         return -1
 
 
-"""Tests:"""
+"""Tests: (don't catch custom exceptions for debug purposes)"""
 
 # matching
 a = Circle(2.6, 7, 2)
