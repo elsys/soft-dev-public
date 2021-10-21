@@ -38,6 +38,7 @@ $ marp 01.md && open 01.html
 |Номер| Име | Github | Бонбони | Отсъствия |
 |-----|-----|--------|---------|-----------|
 |1| Авигея Илиева |  [AI18527](https://github.com/AI18527) | | |
+|2| Адриан Янковски | [adrianyankovski](https://github.com/adrianyankovski) | | |
 |2| Алекс Гечовски | [AlexGechovski](https://github.com/AlexGechovski) | | |
 |3| Александра Станчева | [allks12](https://github.com/allks12) | | |
 |4| Боряна Стефанова| [Boryana23](https://github.com/Boryana23) | | |
