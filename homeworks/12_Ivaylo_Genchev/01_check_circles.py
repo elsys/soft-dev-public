@@ -1,14 +1,5 @@
-from __future__ import annotations
-
 from math import sqrt
 
-"""
-Assignment:
-
-Given 2 circles in 2d space:
-Params: center point cordinates(x, y), radius size
-Task: Determine their state - matching, touching, nested, intersecting, unrelated.
-"""
 
 class NegativeRadiusError(Exception):
     """Custom exception raised when circle radius is negative."""
@@ -16,174 +7,118 @@ class NegativeRadiusError(Exception):
     def __init__(self) -> None:
         super().__init__("Circle radius is negative.")
 
+
 class InvalidDataType(Exception):
-    """Custom exception raised when circle cordinates or radius aren't of type int or float"""
+    """Custom exception raised when circle coordinates or radius aren't of type int or float."""
 
-    def __init__(self) -> None:
-        super().__init__("Invalid data type. Expected integer or float.")
-
-
-class Circle:
-    def __init__(self, x: float, y: float, r: float) -> None:
-
-        if (type(x) != int and type(x) != float) or (type(y) != int and type(y) != float) or (type(r) != int and type(r) != float):
-            raise InvalidDataType()            
-
-        if r < 0: 
-            raise NegativeRadiusError() 
-        
-        self.cords = (x, y)
-        self.radius = r
-
-    def get_distance(self, other_circle: Circle) -> float:
-        """Calculates the distance between 2 circle centers."""
-
-        # calculate distance between 2 points (Pythagorean theorem)
-        return sqrt((self.cords[0] - other_circle.cords[0])**2 + (self.cords[1] - other_circle.cords[1])**2)
+    def __init__(self, message: str = "") -> None:
+        super().__init__(f"Invalid data type. {message}")
 
 
-    def is_matching(self, other_circle: Circle) -> bool:
+def get_distance(
+    c1_center: tuple[float | int, float | int],
+    c2_center: tuple[float | int, float | int],
+) -> float:
+    """Calculates the distance between 2 circle centers."""
+
+    return sqrt((c1_center[0] - c2_center[0]) ** 2 + (c1_center[1] - c2_center[1]) ** 2)
+
+
+def check_circles(
+    c1_center: tuple[float, float],
+    c1_radius: float,
+    c2_center: tuple[float, float],
+    c2_radius: float,
+) -> str:
+
+    # Handle incorrect data types
+    if type(c1_center) != tuple or type(c2_center) != tuple:
+        raise InvalidDataType(f"Expected tuple.")
+    if type(c1_center[0]) != int and type(c1_center[0]) != float:
+        raise InvalidDataType(
+            f"Expected int or float. Not {type(c1_center[0])}")
+    if type(c1_center[1]) != int and type(c1_center[1]) != float:
+        raise InvalidDataType(
+            f"Expected int or float. Not {type(c1_center[1])}")
+    if type(c2_center[0]) != int and type(c2_center[0]) != float:
+        raise InvalidDataType(
+            f"Expected int or float. Not {type(c2_center[0])}")
+    if type(c2_center[1]) != int and type(c2_center[1]) != float:
+        raise InvalidDataType(
+            f"Expected int or float. Not {type(c2_center[1])}")
+    if type(c1_radius) != int and type(c1_radius) != float:
+        raise InvalidDataType(f"Expected int or float. Not {type(c1_radius)}")
+    if type(c2_radius) != int and type(c2_radius) != float:
+        raise InvalidDataType(f"Expected int or float. Not {type(c2_radius)}")
+
+    # Handle negative radius
+    if c1_radius < 0 or c2_radius < 0:
+        raise NegativeRadiusError
+
+    def are_matching() -> bool:
         """
         Checks if 2 circles are matching.
         Both circles must share all points.
         """
 
-        # check if the 2 circles have matching cordinates and radius
-        if self.cords[0] == other_circle.cords[0] and self.cords[1] == other_circle.cords[1] and self.radius == other_circle.radius:
+        # check if the 2 circles have matching coordinates and radius
+        if c1_center == c2_center and c1_radius == c2_radius:
             return True
 
         # the circles aren't matching
         return False
 
-    def is_touching(self, other_circle: Circle, _dist: None) -> bool:
+    def are_nested() -> bool:
+        """Checks if one of the circles is fully consumed by the other."""
+
+        # check if the distance between the 2 circles + the firsts radius is less than the seconds radius
+        if circle_dist + c1_radius < c2_radius or circle_dist + c2_radius < c1_radius:
+            return True
+
+        # the circles aren't nested
+        return False
+
+    def are_touching() -> bool:
         """
         Checks if 2 circles are touching.
         Both circles must share 1 point.
         """
 
-        dist = _dist if _dist is not None else self.get_distance(other_circle)
-
         # check if the distance between the circles is equal to their combined radius
-        if dist == self.radius + other_circle.radius:
+        if circle_dist == c1_radius + c2_radius:
             return True
-        
+
         # the circles aren't touching
         return False
 
-    def is_nested(self, other_circle: Circle, _dist: None) -> bool:
-        """Checks if this->circle is fully consumed by another cirlce without the 2 circles touching."""
-        
-        dist = _dist if _dist is not None else self.get_distance(other_circle)
-
-        # check if the distance between the 2 circles + the firsts radius is less than the seconds radius
-        if dist + self.radius < other_circle.radius:
-            return True
-        
-        # this circle isn't nested in other_circe
-        return False
-
-    def is_tangent(self, other_circle: Circle, _dist: None) -> bool:
-        """Checks if this->circle is fully consumed by another cirlce with the 2 circles touching."""
-
-        dist = _dist if _dist is not None else self.get_distance(other_circle)
-
-        # check if the distance between the 2 circles + the firsts radius is the same as the second circles radius
-        if dist + self.radius == other_circle.radius:
-            return True
-        
-        # this circle isn't tangent to the other_circle
-        return False
-
-    def is_intersecting(self, other_circle: Circle, _dist: None) -> bool:
+    def are_intersecting() -> bool:
         """Checks if the 2 circles have more than 1 touching point."""
 
-        dist = _dist if _dist is not None else self.get_distance(other_circle)
-
-        # check if the distance between the 2 circles is less than their combined radius 
-        if dist < self.radius + other_circle.radius:
+        # check if the distance between the 2 circles is less than their combined radius
+        if circle_dist < c1_radius + c2_radius:
             return True
 
         # the circles aren't intersecting
         return False
 
-    def is_unrelated(self, other_circle: Circle, _dist: None) -> bool:
-        """Checks if the 2 circles are unrelated (aren't in any other sate)."""
+    circle_dist = get_distance(c1_center, c2_center)
 
-        dist = _dist if _dist is not None else self.get_distance(other_circle)
+    if are_matching():
+        return "MATCHING"
+    elif are_nested():
+        return "CONTAINING"
+    elif are_intersecting():
+        return "INTERSECTING"
+    elif are_touching():
+        return "TOUCHING"
 
-        # check if the distance between the 2 circles is greater than their combined radius
-        if dist > self.radius + other_circle.radius:
-            return True
-
-        # the circles aren't unrelated
-        return False
-
-    def get_state(self, other_circle: Circle) -> int:
-        """
-        Returns an integer corresponding to the 2 circles state:
-            0 - the 2 circles are matching.
-            1 - the 2 circles are touching.
-            2 - this circle is nested in other_circle.
-            3 - this circle is tangent to other_circle.
-            4 - the 2 circles are intersecting.
-            -1 - the 2 circles are unrelated.
-        """
-
-        if self.is_matching(other_circle):
-            print("The circles are matching")
-            return 0
-
-        # Calculate distance once (sqrt can be expensive)
-        dist = self.get_distance(other_circle)
-
-        if self.is_touching(other_circle, dist):
-            print("The circles are touching")
-            return 1
-
-        if self.is_nested(other_circle, dist):
-            print("This circle is nested in the other cirlce")
-            return 2
-
-        if self.is_tangent(other_circle, dist):
-            print("This circle is tangent to the other circle")
-            return 3
-
-        if self.is_intersecting(other_circle, dist):
-            print("The circles are intersecting")
-            return 4
-
-        print("The circles are unrelated")
-        return -1
+    return "NO COMMON"
 
 
-"""Tests: (don't catch custom exceptions for debug purposes)"""
+if __name__ == "__main__":
 
-# matching
-a = Circle(2.6, 7, 2)
-b = Circle(2.6, 7, 2)
-print(a.get_state(b))  # 0
-
-# touching
-a = Circle(0, 0, 5)
-b = Circle(12, 9, 10)
-print(a.get_state(b))  # 1
-
-# nested
-b = Circle(0, 0.2, 100.3)
-a = Circle(5, 5, 20)
-print(a.get_state(b))  # 2
-
-# tangent
-b = Circle(0, 0, 100)
-a = Circle(0, 80, 20)
-print(a.get_state(b))  # 3
-
-# intersecting
-a = Circle(0, 0, 5)
-b = Circle(3, 3, 3)
-print(a.get_state(b))  # 4
-
-# unrelated
-a = Circle(0, 0, 1)
-b = Circle(10, 10, 1)
-print(a.get_state(b))  # -1
+    print(check_circles((2.6, 7), 2, (2.6, 7), 2))  # MATCHING
+    print(check_circles((0, 0), 5, (12, 9), 10))  # TOUCHING
+    print(check_circles((0, 0.2), 100.3, (5, 5), 19.2))  # CONTAINING
+    print(check_circles((0, 0), 5, (3, 3), 3))  # INTERSECTING
+    print(check_circles((0, 0), 1, (10, 10), 1))  # NO COMMON
