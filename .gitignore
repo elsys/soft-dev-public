@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 materials/**/*.html
 .DS_Store
+=======
+term1/fbs/fbs/lib/python3.9/site-packages/
+term1/fbs/app/__pycache__/
+*.pyc
+>>>>>>> 1ca25fc0a8b243cee04e1a2fae7db6cb4d383145
