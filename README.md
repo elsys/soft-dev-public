@@ -49,7 +49,7 @@ $ marp 01.md && open 01.html
 |11| Иваело Кръстев | [Ivaelo](https://github.com/Ivaelo) | | |
 |12| Ивайло Димов | [IvailoDimov](https://github.com/IvailoDimov) | | |
 |13| Ивайло Генчев | [Squidfishrl](https://github.com/Squidfishrl) | | |
-|14| Иван Станчев | [IvanStanchev](https://github.com/IvanStanchev) | | |
+|14| Иван Станчев | [IvanStanchev](https://github.com/IvanStanchev) | 🍬 | |
 |15| Йордан Христов | [dachkata555](https://github.com/dachkata555) | | |
 |16| Калин Георгиев | [kgeorgiev77](https://github.com/kgeorgiev77) | 🍬 | |
 |17| Кристиан Косев | [Grozdi](https://github.com/Grozdi) | | |
