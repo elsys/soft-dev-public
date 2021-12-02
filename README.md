@@ -58,7 +58,7 @@ $ marp 01.md && open 01.html
 |20| Мартин Златанов | [MartinZlatanov1](https://github.com/MartinZlatanov1) |🍬 | |
 |21| Николай Лазаров| [NikolayLazarov](https://github.com/NikolayLazarov) |🍬🍬 | |
 |22| Пламен Цоков | [PlamenTs18](https://github.com/PlamenTs18) | | |
-|23| Симеон Христов | [ItzNinjaCat](https://github.com/ItzNinjaCat) | | |
+|23| Симеон Христов | [ItzNinjaCat](https://github.com/ItzNinjaCat) |🍬🍬 | |
 |24| Станислав Иванов | [Stanislav04](https://github.com/Stanislav04) | | |
 |25| Явор Пачеджиев| [yavor2](https://github.com/yavor2) | | |
 |26| Ясен Ефремов | [YassenEfremov](https://github.com/YassenEfremov) | 🍬🍬🍬 | |
