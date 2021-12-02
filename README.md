@@ -60,5 +60,5 @@ $ marp 01.md && open 01.html
 |22| Пламен Цоков | [PlamenTs18](https://github.com/PlamenTs18) | | |
 |23| Симеон Христов | [ItzNinjaCat](https://github.com/ItzNinjaCat) |🍬🍬 | |
 |24| Станислав Иванов | [Stanislav04](https://github.com/Stanislav04) | | |
-|25| Явор Пачеджиев| [yavor2](https://github.com/yavor2) | | |
+|25| Явор Пачеджиев| [yavor2](https://github.com/yavor2) | 🍬 | |
 |26| Ясен Ефремов | [YassenEfremov](https://github.com/YassenEfremov) | 🍬🍬🍬 | |
