@@ -42,7 +42,7 @@ $ marp 01.md && open 01.html
 |4| Александра Станчева | [allks12](https://github.com/allks12) | | |
 |5| Боряна Стефанова| [Boryana23](https://github.com/Boryana23) | | |
 |6| Валентин Найденов| [valentinmnaydenov](https://github.com/valentinmnaydenov) | | |
-|7| Данаил Божков | [DBozhkovV](https://github.com/DBozhkovV) | | |
+|7| Данаил Божков | [DBozhkovV](https://github.com/DBozhkovV) |🍬🍬🍬 | |
 |8| Даниел Паунов | [McAwesome123](https://github.com/McAwesome123) | | |
 |9| Елена Върбанова | [elenavarbanova](https://github.com/elenavarbanova) | | |
 |10| Златина Лилова | [zlatililova](https://github.com/zlatililova) | | |
