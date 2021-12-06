@@ -47,7 +47,7 @@ $ marp 01.md && open 01.html
 |9| Елена Върбанова | [elenavarbanova](https://github.com/elenavarbanova) | | |
 |10| Златина Лилова | [zlatililova](https://github.com/zlatililova) | | |
 |11| Иваело Кръстев | [Ivaelo](https://github.com/Ivaelo) | | |
-|12| Ивайло Димов | [IvailoDimov](https://github.com/IvailoDimov) | | |
+|12| Ивайло Димов | [IvailoDimov](https://github.com/IvailoDimov) 🍬| | |
 |13| Ивайло Генчев | [Squidfishrl](https://github.com/Squidfishrl) | | |
 |14| Иван Станчев | [IvanStanchev](https://github.com/IvanStanchev) | 🍬 | |
 |15| Йордан Христов | [dachkata555](https://github.com/dachkata555) | | |
