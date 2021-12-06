@@ -40,7 +40,7 @@ $ marp 01.md && open 01.html
 |1| Авигея Илиева |  [AI18527](https://github.com/AI18527) | | |
 |3| Алекс Гечовски | [AlexGechovski](https://github.com/AlexGechovski) | | |
 |4| Александра Станчева | [allks12](https://github.com/allks12) | | |
-|5| Боряна Стефанова| [Boryana23](https://github.com/Boryana23) | | |
+|5| Боряна Стефанова| [Boryana23](https://github.com/Boryana23) |🍬🍬| |
 |6| Валентин Найденов| [valentinmnaydenov](https://github.com/valentinmnaydenov) | | |
 |7| Данаил Божков | [DBozhkovV](https://github.com/DBozhkovV) |🍬🍬🍬 | |
 |8| Даниел Паунов | [McAwesome123](https://github.com/McAwesome123) | | |
