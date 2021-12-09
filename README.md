@@ -53,7 +53,7 @@ $ marp 01.md && open 01.html
 |15| Йордан Христов | [dachkata555](https://github.com/dachkata555) | | |
 |16| Калин Георгиев | [kgeorgiev77](https://github.com/kgeorgiev77) | 🍬 | |
 |17| Кристиан Косев | [Grozdi](https://github.com/Grozdi) | | |
-|18| Лъчезар Велинов | [Lachezar-Velinov](https://github.com/Lachezar-Velinov) | 🍬 | |
+|18| Лъчезар Велинов | [Lachezar-Velinov](https://github.com/Lachezar-Velinov) | 🍬🍬 | |
 |19| Лъчезар Лазаров | [LachezarLazarov](https://github.com/LachezarLazarov) | | |
 |20| Мартин Златанов | [MartinZlatanov1](https://github.com/MartinZlatanov1) |🍬 | |
 |21| Николай Лазаров| [NikolayLazarov](https://github.com/NikolayLazarov) |🍬🍬 | |
