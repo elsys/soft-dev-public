@@ -333,11 +333,20 @@ for i in range(20, 0, -3):
 - работят като навсякъде
 - работят върху най-вътрешния цикъл, ако има вложени
 ---
-# `switch/case`
-- ?
----
-# `switch/case`
-- няма :)
+# `match/case`
+```
+match x:
+  case 5:
+    print("integer")
+  case "Hello":
+    print("string")
+  case True:
+    print("boolean")
+  case default:
+    print(f"x is {default}")
+```
+[Виж повече](match.md)
+
 ---
 # Функции
 Функциите в `python` са функции :)
