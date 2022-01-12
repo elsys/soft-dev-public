@@ -1,0 +1,17 @@
+def fib(i):
+  if i == 2:
+    return i
+  return fib(i-1) + fib(i-2)
+  
+
+def num_ways(N):
+  if N <= 1:
+    return "ERROR"
+  if N > 2
+    return "ERROR"
+  if N == 2:
+      return N
+  return fib(N)
+    
+
+print(num_ways(3))
