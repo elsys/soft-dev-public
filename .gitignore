@@ -1,3 +1,4 @@
 term1/fbs/fbs/lib/python3.9/site-packages/
 term1/fbs/app/__pycache__/
 *.pyc
+materials/**/*.html
