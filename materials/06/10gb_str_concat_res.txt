@@ -1,0 +1,102 @@
+# Python 3.10.0
+
+Rapid test: Concatenating strings of size 10 1,000,000,000 times
+
+func: 4
+description: Creates a string list using list comprehension and then joins it.
+time: 93.88283771799979
+output size: 10,000,000,000 bytes
+process size: 9,786,524 bytes
+
+func: 8
+description: Creates a string list(f'strings') using list comprehension and then joins it.
+time: 100.51368008399731
+output size: 10,000,000,000 bytes
+process size: 9,787,404 bytes
+
+func: 1
+description: Using += operator.
+time: 116.99068043900115
+output size: 10,000,000,000 bytes
+process size: 9,785,548 bytes
+
+func: 2
+description: Appends strings to a string list. Once done, join them.
+time: 121.45999935300279
+output size: 10,000,000,000 bytes
+process size: 18,386,440 bytes
+
+func: 3
+description: Uses an in-memory stream of text.
+time: 138.52512805100196
+output size: 10,000,000,000 bytes
+process size: 9,786,524 bytes
+
+func: 5
+description: Uses += with f'strings'.
+time: 146.50398512599713
+output size: 10,000,000,000 bytes
+process size: 9,786,524 bytes
+
+func: 7
+description: Uses += with string placeholders(interpolation operator)
+time: 180.56927497599827
+output size: 10,000,000,000 bytes
+process size: 9,787,404 bytes
+
+func: 6
+description: Uses += with old fstrings (.format)
+time: 254.12109361299736
+output size: 10,000,000,000 bytes
+process size: 9,787,404 bytes
+
+Long test: Concatenating strings of size 100,000 100,000 times
+
+func: 5
+description: Uses += with f'strings'.
+time: 4.857566938000673
+output size: 10,000,000,000 bytes
+process size: 9,787,404 bytes
+
+func: 1
+description: Using += operator.
+time: 4.912455125999259
+output size: 10,000,000,000 bytes
+process size: 9,786,328 bytes
+
+func: 7
+description: Uses += with string placeholders(interpolation operator)
+time: 5.326644279000902
+output size: 10,000,000,000 bytes
+process size: 9,787,404 bytes
+
+func: 6
+description: Uses += with old fstrings (.format)
+time: 5.338767139997799
+output size: 10,000,000,000 bytes
+process size: 9,787,404 bytes
+
+func: 3
+description: Uses an in-memory stream of text.
+time: 6.984250999001233
+output size: 10,000,000,000 bytes
+process size: 9,786,524 bytes
+
+func: 4
+description: Creates a string list using list comprehension and then joins it.
+time: 7.020436308001081
+output size: 10,000,000,000 bytes
+process size: 9,786,524 bytes
+
+func: 2
+description: Appends strings to a string list. Once done, join them.
+time: 7.344550211997557
+output size: 10,000,000,000 bytes
+process size: 9,786,524 bytes
+
+func: 8
+description: Creates a string list(f'strings') using list comprehension and then joins it.
+time: 7.548627090000082
+output size: 10,000,000,000 bytes
+process size: 9,787,404 bytes
+
