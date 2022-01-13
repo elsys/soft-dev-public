@@ -346,6 +346,7 @@ match x:
     print(f"x is {default}")
 ```
 [Виж повече](match.md)
+
 ---
 # Функции
 Функциите в `python` са функции :)
