@@ -99,3 +99,4 @@ $ marp 01.md && open 01.html
 |24| Станислав Иванов | [Stanislav04](https://github.com/Stanislav04) | | |
 |25| Явор Пачеджиев| [yavor2](https://github.com/yavor2) | 🍬 | |
 |26| Ясен Ефремов | [YassenEfremov](https://github.com/YassenEfremov) | 🍬🍬🍬 | |
+
