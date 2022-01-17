@@ -21,7 +21,6 @@ def replace(listing, finding, replacing):
 
 	return listing
 
-
 listing = [ 'a', 1, [ ['a', 'b'], 1], ([1, 3, 'a'], 'a')]#last 'a' in English
 res = replace(listing, 'a', 'c')
 print(res)#[ 'c', 1, [ ['c', 'b'], 1], ([1, 3, 'c'], 'b')]
