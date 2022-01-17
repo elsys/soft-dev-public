@@ -3,80 +3,53 @@
 # if not -> skip
 #if the whole region is blocked -> search for a new region
 
+#avg = []
+
 def walk_trough(matrix, m, n):
+    
+    avg = []
 
     if m not in range(len(matrix)) or n not in range(len(matrix)):
-        return 0, 0
+        return avg
     if matrix[m][n] == 0:
-        return 0, 0
-
-    sum = matrix[m][n]
-    pixels = 1
+        return avg
+    #print("Element: ", matrix[m][n], m, n)
+    avg.append(matrix[m][n])
     matrix[m][n] = 0
 
-    #bottom neighbour
-    if(m+1 in range(0, 5) and matrix[m+1][n] > 0): 
-            new_sum, new_pixels = walk_trough(matrix, m+1, n)
-            sum += new_sum
-            pixels += new_pixels
     
-    #bottom left neighbour
-    elif(m+1 in range(0, len(matrix)) and  n+1 in range(0, len(matrix)) and matrix[m+1][n+1] > 0):
-            new_sum, new_pixels = walk_trough(matrix, m+1, n+1)
-            sum += new_sum
-            pixels += new_pixels
+    for i in range(m-1, m+2):
+        for j in range(n-2, n+2):
+            if i in range(len(matrix)) and j in range(len(matrix[0])):
+            
+                if i == m and j == n:
+                    continue
+            
+                if matrix[i][j] != 0:
+                    avg.extend(walk_trough(matrix, i, j))
 
-    #bottom right neighbour      
-    elif( m+1 in range(0, len(matrix)) and  n-1 in range(0, len(matrix)) and matrix[m+1][n-1] > 0 ):
-            new_sum, new_pixels = walk_trough(matrix, m+1, n-1)
-            sum += new_sum
-            pixels += new_pixels
-
-    #top right neigbour    
-    elif(n+1 in range(0, len(matrix)) and  m-1 in range(0, len(matrix)) and matrix[m-1][n+1] > 0 ):
-            new_sum, new_pixels = walk_trough(matrix, m+1, n+1)
-            sum += new_sum
-            pixels += new_pixels
     
-    #top left neighbour
-    elif(m-1 in range(0, len(matrix)) and  n-1 in range(0, len(matrix)) and matrix[m-1][n-1] > 0 ):
-        new_sum, new_pixels = walk_trough(matrix, m-1, n-1)
-        sum += new_sum
-        pixels += new_pixels
 
-    #top neighbour
-    elif( m-1 in range(0, len(matrix)) and matrix[m-1][n] > 0 ):
-        new_sum, new_pixels = walk_trough(matrix, m-1, n)
-        sum += new_sum
-        pixels += new_pixels
-
-    #right neigbour
-    elif(n-1 in range(0, len(matrix)) and matrix[m][n-1] > 0 ):
-        new_sum, new_pixels = walk_trough(matrix, m, n-1)
-        sum += new_sum
-        pixels += new_pixels
-
-    #left neighbour
-    elif( n+1 in range(0, len(matrix)) and matrix[m][n+1] > 0 ):
-            new_sum, new_pixels = walk_trough(matrix, m, n+1)
-            sum += new_sum
-            pixels += new_pixels
-
-    return sum, pixels
+    return avg 
     
-def avg_brightness(matrix):
+
+
+def avg_brightness(mm):
     r_index = 0
     c_index = 0
-    for i in matrix:
-        for j in i:
-            if matrix[r_index][c_index] == 0:
+    matrix = mm.copy()
+    for r_index, row in enumerate(matrix):
+        for c_index, element in enumerate(row):
+            if element == 0:
                 continue
-
-            pixels, sum = walk_trough(matrix, r_index, c_index)
-            print(f"({r_index}, {c_index}) {sum/pixels}")
-            c_index += 1
-        
-        r_index += 1
+            #print(matrix)
+            sum = walk_trough(matrix, r_index, c_index)
+            average = 0
+           # print(avg)
+            for each in sum:
+                average += each
+            print(f"({r_index}, {c_index}) {(average/len(sum)):.2f}")
+            #avg.clear();
 
 
 m = [
